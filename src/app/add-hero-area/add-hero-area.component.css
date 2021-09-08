@@ -1,0 +1,35 @@
+.add-button {
+    padding: .5rem 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+   
+.add-button:hover {
+  color: white;
+  background-color: #42545C;
+}
+
+
+label {
+    display: block;
+    text-align: center;
+    margin-bottom: 1px;
+    font-weight: bold;
+}
+
+input {
+height: 30px;
+font-size: 20px;
+display: block;
+width: 100%;
+padding: .5rem;
+margin: 4px 0;
+box-sizing: border-box;
+}
+
+  
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}

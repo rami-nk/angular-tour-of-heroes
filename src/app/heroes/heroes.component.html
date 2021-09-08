@@ -1,0 +1,27 @@
+
+<div>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroStore.heroesObservable | async">
+
+      <a *ngIf="hero.id" routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+
+      <a *ngIf="!hero.id">
+        <span class="badge-disabled">
+          <div class="loader"></div>
+        </span> {{hero.name}}
+      </a>
+
+      <button
+      *ngIf="hero.id"
+      class="delete"
+      title="delete hero"
+      (click)="delete(hero)">x</button>
+
+    </li>
+  </ul>
+</div>
+
+ <app-add-hero-area></app-add-hero-area>
+

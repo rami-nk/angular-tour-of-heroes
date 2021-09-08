@@ -1,0 +1,17 @@
+<div class="search-bar">
+    <app-search-area styles="justify-self: stretch;"></app-search-area>
+</div>
+
+
+<h2>Top Heroes</h2>
+<div class="heroes-menu">
+    <a
+        *ngFor="let hero of heroStore.heroesObservable | async | slice:0:5"
+        routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+    </a>
+</div>
+
+
+
+

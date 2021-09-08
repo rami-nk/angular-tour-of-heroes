@@ -1,0 +1,19 @@
+<div class="outer-warpper-div">
+    <div class="label-wrp">
+        <label for="search-hero"> Search</label>
+    </div>
+    
+    <input type="text"
+           id="search-hero"
+           #searchBox
+           (input)="search(searchBox.value)">
+    
+    <ul class="search-result">
+        <li *ngFor="let hero of heroes$ | async">
+            <a routerLink="/detail/{{hero.id}}">
+                {{hero.name}}
+            </a>
+            
+        </li>
+    </ul>
+</div>
