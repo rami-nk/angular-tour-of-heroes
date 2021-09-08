@@ -38,7 +38,7 @@ export class HeroStoreService {
    addHero(hero: Hero) {
      this.heroes = [...this.heroes, hero];
      this.heroService.addHero(hero).subscribe(
-       _ => this.getHeroes()
+        _ => this.getHeroes()
      );
    }
 
@@ -52,6 +52,5 @@ export class HeroStoreService {
      this.heroes[idx] = hero;
      this.heroService.updateHero(hero).subscribe();
    }
-
 
 }

@@ -7,10 +7,9 @@
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </a>
 
-      <a *ngIf="!hero.id">
-        <span class="badge-disabled">
+      <a class="hidden" *ngIf="!hero.id">
           <div class="loader"></div>
-        </span> {{hero.name}}
+          <span class="hidden-span">{{hero.name}}</span>
       </a>
 
       <button
