@@ -49,8 +49,19 @@ export class HeroStoreService {
 
    updateHero(hero: Hero) {
      let idx = this.heroes.findIndex(listItem => listItem.id === hero.id);
+     let heroCache = this.heroes[idx];
      this.heroes[idx] = hero;
-     this.heroService.updateHero(hero).subscribe();
+     this.heroService.updateHero(hero).subscribe(
+       result => {
+         // If updating a hero failed, then return changes and fetch
+         // all heroes again to update all components.
+         if (!result)
+         {
+          this.heroes[idx] = heroCache;
+          this.getHeroes();
+         }
+       }
+     );
    }
 
 }
