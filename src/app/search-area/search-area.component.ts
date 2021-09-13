@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';import { Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {Observable, Subject} from 'rxjs';
+import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
+import {Hero} from '../models/hero';
+import {HeroService} from '../services/hero-service/hero.service';
+
 ;
-import { Hero } from '../hero';
-import { HeroStoreService } from '../hero-store.service';
-import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-search-area',
@@ -16,14 +17,15 @@ export class SearchAreaComponent implements OnInit {
   searchTerms = new Subject<string>();
   heroes$!: Observable<Hero[]>;
 
-  constructor(public heroService: HeroService) { }
+  constructor(public heroService: HeroService) {
+  }
 
   ngOnInit(): void {
     this.heroes$ = this.searchTerms.pipe(
       debounceTime(300),
       distinctUntilChanged(),
       switchMap((term: string) => this.heroService.searchForHero(term))
-    ); 
+    );
   }
 
   search(term: string): void {

@@ -1,25 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroStoreService } from '../hero-store.service';
-import { MessageService } from '../message.service';
+import {Component} from '@angular/core';
+import {Hero} from '../models/hero';
+import {HeroStoreService} from '../services/hero-store-service/hero-store.service';
 
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesComponent {
 
-  constructor(public heroStore: HeroStoreService,
-              private messageService: MessageService) { }
-
-  ngOnInit(): void {
+  constructor(public heroStore: HeroStoreService) {
   }
-
 
   delete(hero: Hero): void {
     this.heroStore.deleteHero(hero);
   }
-
-
 }

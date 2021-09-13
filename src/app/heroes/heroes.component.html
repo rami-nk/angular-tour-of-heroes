@@ -1,4 +1,3 @@
-
 <div>
   <ul class="heroes">
     <li *ngFor="let hero of heroStore.heroesObservable | async">
@@ -8,19 +7,20 @@
       </a>
 
       <a class="hidden" *ngIf="!hero.id">
-          <div class="loader"></div>
-          <span class="hidden-span">{{hero.name}}</span>
+        <div class="loader"></div>
+        <span class="hidden-span">{{hero.name}}</span>
       </a>
 
       <button
-      *ngIf="hero.id"
-      class="delete"
-      title="delete hero"
-      (click)="delete(hero)">x</button>
+        *ngIf="hero.id"
+        class="delete"
+        title="delete hero"
+        (click)="delete(hero)">x
+      </button>
 
     </li>
   </ul>
 </div>
 
- <app-add-hero-area></app-add-hero-area>
+<app-add-hero-area></app-add-hero-area>
 

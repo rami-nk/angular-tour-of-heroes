@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AddHeroAreaComponent } from './add-hero-area.component';
+import {AddHeroAreaComponent} from './add-hero-area.component';
 
 describe('AddHeroAreaComponent', () => {
   let component: AddHeroAreaComponent;
@@ -8,9 +8,9 @@ describe('AddHeroAreaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddHeroAreaComponent ]
+      declarations: [AddHeroAreaComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

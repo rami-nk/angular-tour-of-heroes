@@ -19,11 +19,12 @@ nav a {
   justify-content: center;
   flex-direction: row;
 }
-  
+
 nav a:hover {
   color: white;
   background-color: #42545C;
 }
+
 nav a.active {
   background-color: black;
 }

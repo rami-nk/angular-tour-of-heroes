@@ -1,23 +1,26 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroStoreService } from '../hero-store.service';
+import {Component} from '@angular/core';
+import {Hero} from '../models/hero';
+import {HeroStoreService} from '../services/hero-store-service/hero-store.service';
 
 @Component({
   selector: 'app-add-hero-area',
   templateUrl: './add-hero-area.component.html',
   styleUrls: ['./add-hero-area.component.css']
 })
-export class AddHeroAreaComponent implements OnInit {
+export class AddHeroAreaComponent {
 
-  constructor(public heroStore: HeroStoreService) { }
+  name = '';
 
-  ngOnInit(): void {
+  constructor(public heroStore: HeroStoreService) {
   }
 
   add(name: string) {
     name = name.trim();
-    if (!name) { return; }
-    this.heroStore.addHero({ name } as Hero);
+    if (!name) {
+      return;
+    }
+    this.heroStore.addHero({name} as Hero);
+    this.name = '';
   }
 
 }

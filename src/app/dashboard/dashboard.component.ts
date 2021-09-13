@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { HeroStoreService } from '../hero-store.service';
+import {Component} from '@angular/core';
+import {HeroStoreService} from '../services/hero-store-service/hero-store.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 
-  constructor(public heroStore: HeroStoreService) { }
-
-  ngOnInit(): void {
+  constructor(public heroStore: HeroStoreService) {
   }
 
 }

@@ -1,7 +1,7 @@
 <label for="new-hero">Hero name: </label>
-<input id="new-hero" #heroName />
+<input autocomplete="off" id="new-hero" [(ngModel)]="name"/>
 
 <button class="add-button"
-        (click)="add(heroName.value); heroName.value=''">
+        (click)="add(name)">
   Add hero
 </button>
