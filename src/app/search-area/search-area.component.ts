@@ -4,15 +4,12 @@ import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 import {Hero} from '../models/hero';
 import {HeroService} from '../services/hero-service/hero.service';
 
-;
-
 @Component({
   selector: 'app-search-area',
   templateUrl: './search-area.component.html',
   styleUrls: ['./search-area.component.css']
 })
 export class SearchAreaComponent implements OnInit {
-
 
   searchTerms = new Subject<string>();
   heroes$!: Observable<Hero[]>;
